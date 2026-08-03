@@ -5,7 +5,7 @@ services:
     build:
       context: ./frontend
     ports:
-      - "3001:3000"
+      - "3050:3000"
     environment:
       - NODE_ENV=production
     depends_on:
@@ -15,7 +15,7 @@ services:
     build:
       context: ./backend
     ports:
-      - "4001:4000"
+      - "4050:4001"
     environment:
       - NODE_ENV=production
       - MONGODB_URI=mongodb://mongo:27017/jarvis
@@ -25,7 +25,7 @@ services:
   mongo:
     image: mongo:latest
     ports:
-      - "27017:27017"
+      - "27050:27017"
     volumes:
       - mongo_data:/data/db
 
